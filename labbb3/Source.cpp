@@ -21,7 +21,7 @@ struct order {
 };
 // this is an strucure which implements the 
 // operator overlading 
-struct  islessen {
+struct  comp {
 	bool operator()(order& p1, order& p2)
 	{
 		// return "true" if "p1" is ordered  
@@ -46,7 +46,7 @@ int main()
 
 	system("chcp 1252");
 
-	p_queue<order, islessen > buyers, sellers;////////////////////
+	p_queue<order, comp > buyers, sellers;////////////////////
 
 	constexpr int n = 7;
 

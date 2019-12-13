@@ -1,0 +1,51 @@
+
+// find_if example
+#include <iostream>     // std::cout
+#include <algorithm>    // std::find_if
+#include <vector>       // std::vector
+#include <queue> 
+#include <vector>
+
+#include <algorithm> 
+
+#include <functional>
+struct  islessen {
+	bool operator()(const int& p1, const int& p2)
+	{
+		// return "true" if "p1" is ordered  
+		// before "p2", for example: 
+		return p1 < p2;
+	}
+};
+using namespace std;
+int main() {
+	
+	islessen b;
+	vector<int>v{ 1,2,3,7,8,9 };
+	int a = 6;
+
+	auto it = std::find_if(v.begin(), v.end(), [&](int value) {return b(a, value); });
+	v.insert(it, a);
+	for (int i = 0; i < v.size(); i++) {
+		std::cout << v[i] << std::endl;
+	}
+
+	system("pause");
+	return 0;
+}
+/*
+	std::vector<int> v{ 12 };
+
+	int a = 1;
+
+	auto it=std::find_if(v.begin(), v.end() ,[&](int value){return value<a;});
+
+		v.insert(it, a);
+		int b = 1;
+
+		auto i = std::find_if(v.begin(), v.end(), [b](int value) {return value < b; });
+		v.insert(i, b);
+		for (int i = 0; i < v.size(); i++) {
+			std::cout << v[i] << std::endl;
+		}
+			*/

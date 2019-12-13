@@ -1,0 +1,60 @@
+/*
+// Example program
+#include <iostream>
+#include <string>
+#include <list>
+#include <queue>
+#include <stack>
+#include <vector>
+#include<iterator>
+#include <utility> 
+#include<algorithm>
+using namespace std;
+
+template<class IT, class PRED >
+IT select(IT F, IT L, PRED PR);
+
+template<class IT, class PRED>
+void sel_sort(IT F, IT last, PRED PR) {
+		
+	for (; F != last; F++) {
+		
+	IT E = select(F, last, PR);
+		
+	  swap(*E, *F);
+	}
+}
+template<class IT, class PRED >
+IT select(IT F, IT L, PRED PR) {
+	IT E=F;
+	for ( E ; F != L; F++)
+		
+		if (PR(*F, *E)) // välj element
+			E = F;
+	return E;
+}
+template<class T>
+struct les {
+	bool operator()(T a1, T a2) {
+		return a1 < a2;
+	}
+};
+int main() {
+
+	int ia[] = { 3, 12, 2, 5, 2 };
+	les<int> ls;
+	int* b = select(ia, ia +5 , ls); 
+	//sel_sort(ia, ia + 4, ls);
+	for (int i = 0; i < 1; i++) {
+
+		std::cout<< b[i] <<std::endl;
+	}
+	//std::cout << *b << endl;
+	
+	//alternativ utan instansnamn ls
+	//sel_sort(ia, ia + 5, less<int>()); // explicit anrop till konstrueraren
+	system("pause");
+	return 0;
+}
+
+*/
